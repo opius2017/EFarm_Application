@@ -20,6 +20,10 @@ To obtain a local copy of the EFarm e-commerce website, you have two options:
    - Select "Download ZIP" to save the repository as a compressed archive.
    - Extract the downloaded ZIP archive to your local system.
 
+  
+<img src="https://github.com/opius2017/EFarm_Application/blob/master/Product%20page.png" width="1000" height="250">
+
+
 ## About Blazor
 
 Blazor is a cutting-edge framework developed by Microsoft for building interactive client-side web UIs with .NET. Some key features and advantages of Blazor include:
@@ -29,6 +33,11 @@ Blazor is a cutting-edge framework developed by Microsoft for building interacti
 - Render UI as HTML and CSS for broad browser compatibility.
 - Integrate with modern hosting platforms like Docker.
 - Build hybrid desktop and mobile apps using .NET and Blazor.
+
+  
+
+<img src="https://github.com/opius2017/EFarm_Application/blob/master/Body%20Page.png" width="1000" height="250">
+
 
 ## Why Use Blazor for Client-Side Web Development
 
@@ -40,6 +49,10 @@ Using .NET for client-side web development offers numerous advantages:
 - Benefit from .NET's performance, reliability, and security.
 - Stay productive on Windows, Linux, or macOS using Visual Studio or Visual Studio Code.
 - Build on a stable and feature-rich set of languages, frameworks, and tools.
+
+
+<img src="https://github.com/opius2017/EFarm_Application/blob/master/Landing%20page.png" width="1000" height="250">
+
 
 ## Blazor Components and Razor Markup
 
@@ -79,6 +92,10 @@ namespace handles user sessions. It uses an `IHttpContextAccessor` to access the
 The `UserId` property generates a unique user ID and stores it in a "user" cookie. If the cookie doesn't exist, 
 a new user ID is created and stored. Otherwise, the stored user ID is retrieved.
 
+
+<img src="https://github.com/opius2017/EFarm_Application/blob/master/Payment.png" width="1000" height="300">
+
+
 ## BasketService for User Baskets
 
 The `BasketService` class in the `EFarm.Api.Services` namespace manages user baskets in the application. 
@@ -95,6 +112,10 @@ The `Basket` class in the `EFarm.Api.Model` namespace represents a user's shoppi
 The `Repository` class serves as a data access layer, following the repository pattern. It provides CRUD operations 
 for interacting with entities in the database. Generics allow it to work with various entity types, promoting reusability and separation of concerns.
 
+
+<img src="https://github.com/opius2017/EFarm_Application/blob/master/add%20to%20cart.png" width="1000" height="300">
+
+
 ## Shopping Cart Component
 
 Blazor components are used to display the shopping cart icon with an item count badge. The component interacts 
@@ -109,6 +130,7 @@ The EFarm e-commerce website showcases the power of Blazor for building interact
 Feel free to explore the codebase, contribute, and customize EFarm to suit your needs!
 
 For more information or inquiries, contact the Alx Group at [contact@alxgroup.com](mailto:contact@alxgroup.com).
+
 
 
 <!--
