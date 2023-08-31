@@ -133,6 +133,11 @@ For more information or inquiries, contact the Alx Group at [contact@alxgroup.co
 
 
 
+<img src="https://github.com/opius2017/EFarm_Application/blob/master/Efarm%20view.png" width="1000" height="500">
+
+
+
+
 <!--
 # EFarm e-commerce website
 ## An Alx group project
