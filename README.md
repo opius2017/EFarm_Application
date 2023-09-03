@@ -2,7 +2,7 @@
 
 <img src="https://github.com/opius2017/EFarm_Application/blob/master/Efarm%20logo.png" width="1000" height="250">
 
-EFarm is an e-commerce website built by the Alx Group as a Blazor project. It leverages the power of 
+EFarm is an e-commerce website built by a Team of 3 Developers as a Blazor project. It leverages the power of 
 Blazor, a Microsoft framework that enables developers to create interactive client-side web UIs using 
 C# instead of JavaScript. This repository contains the codebase for the EFarm e-commerce website. 
 Follow the steps below to obtain a local copy of the sample apps and explore the codebase.
