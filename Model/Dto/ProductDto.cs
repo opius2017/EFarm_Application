@@ -1,4 +1,4 @@
-﻿namespace EFarm.Server.Model.Dto
+﻿namespace Efarm.App.Model.Dto
 {
 	public class ProductDto
 	{

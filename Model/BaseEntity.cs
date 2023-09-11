@@ -1,4 +1,4 @@
-﻿namespace EFarm.Server.Model
+﻿namespace Efarm.App.Model
 {
 	public abstract class BaseEntity
 	{

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
-namespace EFarm.Server.Services
+namespace Efarm.App.Services
 {
     public class CookieHandler : DelegatingHandler
     {

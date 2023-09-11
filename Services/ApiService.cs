@@ -1,8 +1,8 @@
-﻿using EFarm.Server.Model.Dto;
+﻿using Efarm.App.Model.Dto;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Text;
 
-namespace EFarm.Server.Services
+namespace Efarm.App.Services
 {
     public class ApiService:IApiService
     {
@@ -92,3 +92,5 @@ namespace EFarm.Server.Services
         }
     }
 }
+
+

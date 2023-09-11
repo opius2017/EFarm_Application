@@ -1,4 +1,4 @@
-﻿namespace EFarm.Server.Services
+﻿namespace Efarm.App.Services
 {
 	public interface IAppSession
 	{

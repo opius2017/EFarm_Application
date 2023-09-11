@@ -1,5 +1,5 @@
 ﻿
-namespace EFarm.Server.Services
+namespace Efarm.App.Services
 {
 	public class AppSession:IAppSession
 	{

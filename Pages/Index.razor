@@ -1,102 +1,240 @@
-﻿@page "/"
-@using System.Text;
-@using Microsoft.AspNetCore.WebUtilities;
-@implements IDisposable
-@inject IApiService apiService
-@inject IHttpContextAccessor httpContextAssessor
-@inject AppState state
-@inject ToastService toast
-@inject NavigationManager NavManager
-<PageTitle>Home</PageTitle>
-<section class="section-products">
-	<div class="container">
-		<div class="row justify-content-center text-center">
-			<div class="col-md-8 col-lg-6">
-				<div class="header">
-					<h3>Featured Product</h3>
-					<h2>Popular Products</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			@if(Products is null)
-			{
-				<div class="spinner"></div>
-				<p class="text-center">Loading Products ...</p>
-			}else
-			@foreach (var product in Products)
-			{
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<NavLink href="@GetLink(product)">
-					<div id="product-1" class="single-product">
-						<div class="part-1" style="background:url(@product.PictureUri) no-repeat center">
-							<ul>
-								<li><a href="#" title="Add to Basket" @onclick="()=>AddToCart(product)" ><i class="fas fa-shopping-cart"></i></a></li>
-								<li><NavLink href="@GetLink(product)"><i class="fas fa-eye"></i></NavLink></li>
-							</ul>
-						</div>
-						<div class="part-2">
-							<h3 class="product-title">
-								<NavLink href="@GetLink(product)">@product.Name</NavLink>
-								</h3>
-							@if(product.OldPrice.HasValue){<h4 class="product-old-price">$@product.OldPrice</h4>}
-							
-							<h4 class="product-price">$@product.Price</h4>
-						</div>
-                        </div>
-                        </NavLink>
-				</div>
-			}
-		
-		</div>
-	</div>
-</section>
-@code{
-	public IEnumerable<ProductDto> Products { get; set; }
-	private Basket Basket = null!;
-	string SearchTerm = "";
-	public async Task AddToCart(ProductDto product) { 
-		var issSuccess=	await apiService.AddToBasket(new BasketItemDto
-		{
-			ProductId=product.Id,
-			Quantity=1,
-			UnitPrice=product.Price
-		});
-		if (issSuccess)
-		{
+﻿@page "/"    
+<PageTitle>Welcome Home</PageTitle>
+ 
+<!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-10 mx-auto">
+                  <div class="detail-box">
+                    <h1>
+                      E-FARM <br>
+                      E-COMMERCE  <br>
+                      SERVICES
+                    </h1>
+                    <div class="btn-box">
+                      <a href="/shop" class="btn2">
+                        Shop Here
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-10 mx-auto">
+                  <div class="detail-box">
+                    <h1>
+                      E-FARM <br>
+                      BUY BEST <br>
+                      QUANITY PRODUCT
+                    </h1>
+                    <div class="btn-box">
+                      <a href="/shop" class="btn2">
+                        Shop Here
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-10 mx-auto">
+                  <div class="detail-box">
+                    <h1>
+                      E-FARM <br>
+                      QUANTITY SERVICES <br>
+                      
+                    </h1>
+                    <div class="btn-box">
+                      <a href="/farm" class="btn2">
+                        Shop Here
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1" ></li>
+          <li data-target="#customCarousel1" data-slide-to="2" ></li>
+        </ol>
+      </div>
+</div>
+    </section>
+    <!-- end slider section -->
 
-			await InvokeAsync(() =>
-			{
-				toast.Success($"{product.Name} added to cart!");
 
-				state.OnStateChange += StateHasChanged;
+    <!-- about section -->
 
-				state.TriggerChange();
-			}
-			);
-		}
-	}
-	public string GetLink(ProductDto product) => $"/product/{product.Id}";
-	protected override async Task OnInitializedAsync()
-	{ 
-		
-		Products = await apiService.GetProducts();
-		NavManager.LocationChanged += HandleLocationChanged;
-	}
-	
-	public async void HandleLocationChanged(object sender, LocationChangedEventArgs e)
-	{
-		var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
-		if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("q", out  var q)) 
-		{
-				Products = await apiService.GetProducts(q);
-			StateHasChanged();
-		}
-		
-	}
-	public void Dispose()
-	{
-		state.OnStateChange -= StateHasChanged;
-		NavManager.LocationChanged -= HandleLocationChanged;
-	}
-}
+  <section class="about_section">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              EFarm is an innovative e-commerce project driven by a dynamic team: Ben Asmah, Pius Owolabi, and Innocent Udo. We leverage Blazor, a Microsoft technology that uses C# for web UIs. Our front-end stack includes HTML, CSS, JavaScript, and Bootstrap, enabling us to create engaging, responsive, and interactive online experiences for farm-fresh shopping. All
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="images/about-img.jpg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Team Members
+        </h2>
+      </div>
+    </div>
+    <div id="customCarousel2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="images/ben.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          <a href="https://github.com/drbenasmah">Ben Asmah</a>
+                        </h5>
+                        <h6>
+                          Frontend
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      Medical Doctor <br>
+                      ALX Software engineering Student Cohort 11 (Nov 2022 - Nov 2023)
+                      Studying this to move on to become a blockchain developer <br>
+                      Looking forward to building healthcare systems on the blockchain <br>
+                      Looking forward to be a household name in Healthcare Blockchain in Africa
+                      #CantStopWontStop
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="images/innocent.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          <a href="https://github.com/Innocentsax">Innocent Udo</a>
+                        </h5>
+                        <h6>
+                          Frontend
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      Software Engineer - Java | Spring | SpringBoot | Hibernate | MySql | PostgresQL | REST API | Agile(AGCP) | TeamWork | Effective Communication | Leadership
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="images/pius.jpeg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          <a href="https://github.com/opius2017">Owolabi Pius</a> 
+                        </h5>
+                        <h6>
+                          Backend
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      I'm a self-motivated developer proficient in C#, C-Programming, Cybersecurity, Network defence, DevOps, Bash Scripting, Python, Javascript and I contribute to OSS. With a mission-driven attitude. I strongly believe that technology, when harnessed correctly, has the power to benefit both people and the planet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#customCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#customCarousel2" data-slide-to="1"></li>
+        <li data-target="#customCarousel2" data-slide-to="2"></li>
+      </ol>
+    </div>
+  </section>
+  <!-- end client section -->
+
+
+
+
+  
+
+
+  <!-- footer section
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">ALX Africa</a>
+      </p>
+    </div>
+  </footer>
+footer section -->
