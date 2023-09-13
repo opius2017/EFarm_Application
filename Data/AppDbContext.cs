@@ -1,8 +1,8 @@
-﻿using Efarm.App.Model;
+﻿using EFarm.Server.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Efarm.App.Data;
+namespace EFarm.Server.Data;
 // Define the 'AppDbContext' class, which inherits from 'DbContext' for database interaction
 public class AppDbContext : DbContext
 {

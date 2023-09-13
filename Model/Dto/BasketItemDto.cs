@@ -1,4 +1,4 @@
-﻿namespace Efarm.App.Model.Dto
+﻿namespace EFarm.Server.Model.Dto
 {
 	// Define a namespace for Data Transfer Objects (DTOs)
 

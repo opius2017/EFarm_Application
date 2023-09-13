@@ -1,8 +1,8 @@
-﻿using Efarm.App.Model.Dto;
+﻿using EFarm.Server.Model.Dto;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Text;
 
-namespace Efarm.App.Services
+namespace EFarm.Server.Services
 {
     public class ApiService:IApiService
     {

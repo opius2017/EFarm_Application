@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Efarm.App.Migrations
+namespace EFarm.Server.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

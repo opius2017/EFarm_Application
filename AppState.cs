@@ -1,4 +1,4 @@
-﻿namespace Efarm.App
+﻿namespace EFarm.Server
 {
 	public class AppState
 	{

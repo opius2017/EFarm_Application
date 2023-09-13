@@ -1,6 +1,6 @@
-﻿using Efarm.App.Model;
+﻿using EFarm.Server.Model;
 
-namespace Efarm.App.Model
+namespace EFarm.Server.Model
 {
 	// Define the namespace for the model classes
 

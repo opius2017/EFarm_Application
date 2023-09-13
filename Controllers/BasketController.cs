@@ -1,14 +1,14 @@
-﻿using Efarm.App.Data;
-using Efarm.App.Model;
-using Efarm.App.Model.Dto;
-using Efarm.App.Services;
+﻿using EFarm.Server.Data;
+using EFarm.Server.Model;
+using EFarm.Server.Model.Dto;
+using EFarm.Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 // Import necessary libraries for this controller
 
-// Define the controller within the 'Efarm.App.Controllers' namespace
-namespace Efarm.App.Controllers
+// Define the controller within the 'EFarm.Server.Controllers' namespace
+namespace EFarm.Server.Controllers
 {
 	// Define the route for this controller, making it accessible at '/api/basket'
 	[Route("api/basket")]

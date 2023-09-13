@@ -1,6 +1,6 @@
-﻿using Efarm.App.Model.Dto;
+﻿using EFarm.Server.Model.Dto;
 
-namespace Efarm.App.Services
+namespace EFarm.Server.Services
 {
 	public interface IApiService
 	{

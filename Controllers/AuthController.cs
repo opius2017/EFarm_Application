@@ -6,8 +6,8 @@ using System.Text;
 
 // Import necessary libraries for this controller
 
-// Define the controller within the 'Efarm.App.Controllers' namespace
-namespace Efarm.App.Controllers
+// Define the controller within the 'EFarm.Server.Controllers' namespace
+namespace EFarm.Server.Controllers
 {
 	// Define the route for this controller, making it accessible at '/api/authenticate'
 	[Route("/api/authenticate")]

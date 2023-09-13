@@ -16,6 +16,9 @@
     <Content Include="Pages\Cart.razor.css" />
     <Content Include="Pages\Checkout.razor.css" />
     <Content Include="Shared\Components\Toast.razor.css" />
+    <Content Update="Pages\Index.razor.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

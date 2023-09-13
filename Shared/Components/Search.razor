@@ -17,10 +17,10 @@
     public void HandleSearch()
     {
         if (!string.IsNullOrEmpty(SearchTerm))
-            NavManager.NavigateTo($"?q={SearchTerm}", false);
+            NavManager.NavigateTo($"/shop?q={SearchTerm}", false);
         else
         {
-            NavManager.NavigateTo("/", true,true);
+            NavManager.NavigateTo("/shop", true, true);
         }
 
     }

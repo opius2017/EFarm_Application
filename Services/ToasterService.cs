@@ -1,7 +1,7 @@
 ﻿
 
 using System.Timers;
-namespace Efarm.App.Services
+namespace EFarm.Server.Services
 {
     public class ToastService : IDisposable
     {

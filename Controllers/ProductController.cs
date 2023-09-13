@@ -1,12 +1,12 @@
-﻿using Efarm.App.Data;
-using Efarm.App.Model;
+﻿using EFarm.Server.Data;
+using EFarm.Server.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 // Import necessary libraries for this controller
 
-// Define the controller within the 'Efarm.App.Controllers' namespace
-namespace Efarm.App.Controllers
+// Define the controller within the 'EFarm.Server.Controllers' namespace
+namespace EFarm.Server.Controllers
 {
 	// Define the route for this controller, making it accessible at '/api/products'
 	[Route("api/products")]

@@ -1,10 +1,11 @@
-using Efarm.App;
-using Efarm.App.Data;
-using Efarm.App.Services;
+
+
+using EFarm.Server;
+using EFarm.Server.Data;
+using EFarm.Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Net.NetworkInformation;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +19,7 @@ builder.Services.AddScoped<IApiService, ApiService>();
 var apiUri = builder.Configuration["ApiUrl"] ?? "http://localhost:5000";
 builder.Services.AddScoped(sp => new HttpClient
 {
-	BaseAddress = new Uri($"{apiUri}/api/"),
+    BaseAddress = new Uri($"{apiUri}/api/"),
 });
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlite());
 builder.Services.AddScoped<ToastService>();
@@ -46,9 +47,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-	app.UseExceptionHandler("/Error");
-	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-	app.UseHsts();
+    app.UseExceptionHandler("/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
@@ -62,11 +63,11 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 using (var scope = app.Services.CreateScope())
 {
-	var scopedProvider = scope.ServiceProvider;
-	var dbContext = scopedProvider.GetRequiredService<AppDbContext>();
-	await dbContext.Database.EnsureDeletedAsync();
-	await dbContext.Database.MigrateAsync();
-	await Seed.Initialise(dbContext);
+    var scopedProvider = scope.ServiceProvider;
+    var dbContext = scopedProvider.GetRequiredService<AppDbContext>();
+    await dbContext.Database.EnsureDeletedAsync();
+    await dbContext.Database.MigrateAsync();
+    await Seed.Initialise(dbContext);
 
 
 }

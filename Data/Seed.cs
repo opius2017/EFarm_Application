@@ -1,6 +1,6 @@
-﻿using Efarm.App.Model;
+﻿using EFarm.Server.Model;
 
-namespace Efarm.App.Data;
+namespace EFarm.Server.Data;
 
 public class Seed
 {
