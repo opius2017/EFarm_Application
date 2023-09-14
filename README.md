@@ -1,10 +1,12 @@
-# EFarm E-Commerce Website
+# Project Name: EFarm E-Commerce Website
 
 <img src="https://github.com/opius2017/EFarm_Application/blob/master/Efarm%20logo.png" width="1000" height="250">
 
+## Introduction 
 EFarm is an e-commerce website built by a Team of 3 Developers as a Blazor project. It leverages the power of 
 Blazor, a Microsoft framework that enables developers to create interactive client-side web UIs using 
 C# instead of JavaScript. This repository contains the codebase for the EFarm e-commerce website. 
+## Visit the site with this link: https://alx.pisowlab.tech
 Follow the steps below to obtain a local copy of the sample apps and explore the codebase.
 
 ## Getting Started
@@ -430,4 +432,17 @@ namespace EFarm.Api.Model
 A generic Repository class is created to serves as a data access layer for interacting with entities in the database. The Repository class follows the repository pattern, providing a standardized way to perform CRUD (Create, Read, Update, Delete) operations on entities in the database. It helps encapsulate database interactions and promotes separation of concerns within the application. The usage of generics allows it to work with different types of entities, providing a flexible and reusable data access solution.
 
 Blazor components are used for displaying the shopping cart icon with an item count badge. The component interacts with the server to retrieve and display the count of items in the user's shopping cart. These component were added to a Blazor page and layout. When a user interacts with the shopping cart (e.g., adds or removes items), the OnStateChange event of the appState service is triggered. This, in turn, updates the displayed item count in real-time without requiring a full page refresh.
+
+## Contributors
+1. Owolabi Pius - Frontend
+   LinkedIn: https://www.linkedin.com/in/pius-owolabi-802058b
+   Twitter: https://www.twitter.com/piusowolabi
+   
+2. Innocent Charle Udo - Backend
+   LinkedIn: https://www.linkedin.com/in/udo-innocent-charles
+   Twitter: https://twitter.com/Innocentsax
+
+3. Ben Asmah - Frontend
+   LinkedIn: https://www.linkedin.com/in/ben-asmah-7a703a121
+   Twitter: href="https://twitter.com/AsmahPapa
 -->
